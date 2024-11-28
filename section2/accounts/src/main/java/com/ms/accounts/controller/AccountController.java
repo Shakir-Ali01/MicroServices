@@ -27,7 +27,7 @@ public class AccountController {
 /*   As of Spring 4.3, if a class has a single constructor, Spring automatically injects
      the dependencies into that constructor without requiring the @Autowired annotation*/
     private IAccountsService iAccountsService;
-    @PostMapping("/create-account")
+    @PostMapping("/create")
     public ResponseEntity<ResponseDto> createAccount(@Valid @RequestBody CustomerDto customerDto) {
         iAccountsService.createAccount(customerDto);
         return ResponseEntity
@@ -53,7 +53,7 @@ public class AccountController {
             )
     }
     )
-    @GetMapping("/fetch-accounts")
+    @GetMapping("/fetch")
     public ResponseEntity<CustomerDto> fetchAccounts(@RequestParam
                                                          @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
                                                          String mobileNumber) {
@@ -62,7 +62,7 @@ public class AccountController {
                 .status(HttpStatus.OK)
                 .body(customerDto);
     }
-    @PutMapping("/update-account")
+    @PutMapping("/update")
     public ResponseEntity<ResponseDto> updateAccountDetails(@Valid @RequestBody CustomerDto customerDto) {
         boolean isUpdated = iAccountsService.updateAccount(customerDto);
         if(isUpdated) {
@@ -75,7 +75,7 @@ public class AccountController {
                     .body(new ResponseDto(AccountConstants.STATUS_500, AccountConstants.MESSAGE_500));
         }
     }
-    @DeleteMapping("/delete-account")
+    @DeleteMapping("/delete")
     public ResponseEntity<ResponseDto> deleteAccount(@RequestParam
                                                          @Pattern(regexp ="[0-9]{10}" ,message = "Mobile number must be 10 digits")
                                                          String mobileNumber) {
