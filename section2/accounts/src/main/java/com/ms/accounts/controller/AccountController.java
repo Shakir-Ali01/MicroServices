@@ -62,7 +62,7 @@ public class AccountController {
                 .status(HttpStatus.OK)
                 .body(customerDto);
     }
-    @PutMapping("/update-accounts")
+    @PutMapping("/update-account")
     public ResponseEntity<ResponseDto> updateAccountDetails(@Valid @RequestBody CustomerDto customerDto) {
         boolean isUpdated = iAccountsService.updateAccount(customerDto);
         if(isUpdated) {
