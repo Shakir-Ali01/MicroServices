@@ -78,7 +78,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>msbank/${project.artifactId}:s4</name>
+						<name>boss215/${project.artifactId}:s4</name>
 					</image>
 					<excludes>
 						<exclude>
