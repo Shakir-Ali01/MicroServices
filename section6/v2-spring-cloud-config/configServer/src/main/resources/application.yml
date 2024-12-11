@@ -2,14 +2,20 @@ spring:
   application:
     name: "configserver"
   profiles:
-     active: native
-#    active: git
+#     active: native
+      active: git
   cloud:
     config:
       server:
-        native:
+#        native:
 #          search-locations: "classpath:/config/"
-           search-locations: "file:///C://Users//User//Documents//config"
-
+#           search-locations: "file:///C://Users//User//Documents//config"
+            git:
+              uri: "https://github.com/Shakir-Ali01/msbytes-config.git"
+              default-label: main
+              timeout: 5
+              force-pull: true
+encrypt:
+  key: "6SD893HFHJK399JFJFHJF88"
 server:
   port: 8071
