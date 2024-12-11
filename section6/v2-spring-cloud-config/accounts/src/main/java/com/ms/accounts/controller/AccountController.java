@@ -37,8 +37,8 @@ public class AccountController {
     public AccountController(IAccountsService iAccountsService) {
         this.iAccountsService = iAccountsService;
     }
-    @Value("${build.version}")
-    private String buildVersion;
+//    @Value("${build.version}")
+//    private String buildVersion;
 
     @Autowired
     private Environment environment;
@@ -109,47 +109,47 @@ public class AccountController {
                     .body(new ResponseDto(AccountConstants.STATUS_500, AccountConstants.MESSAGE_500));
         }
     }
-    @Operation(
-            summary = "Get Build Informantion I",
-            description = "Get Build Information that is deployed into accounts microservices"
-    )
-    @ApiResponses({
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "HTTP Status OK"
-            ),
-            @ApiResponse(
-                    responseCode = "500",
-                    description = "HTTP Status Internal Server Error",
-                    content = @Content(
-                            schema = @Schema(implementation = ErrorResponseDto.class)
-                    )
-            )
-    }
-    )
-    @GetMapping("/build-info")
-    public ResponseEntity<String> getBuilderVersion() {
-        return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
-        //return new ResponseEntity<>(buildVersion, HttpStatusCode.valueOf(200));
-    }
-    @Operation(
-            summary = "Get Java Version",
-            description = "Get Java Information that is installed  into accounts microservices"
-    )
-    @ApiResponses({
-            @ApiResponse(
-                    responseCode = "200",
-                    description = "HTTP Status OK"
-            ),
-            @ApiResponse(
-                    responseCode = "500",
-                    description = "HTTP Status Internal Server Error",
-                    content = @Content(
-                            schema = @Schema(implementation = ErrorResponseDto.class)
-                    )
-            )
-    }
-    )
+//    @Operation(
+//            summary = "Get Build Informantion I",
+//            description = "Get Build Information that is deployed into accounts microservices"
+//    )
+//    @ApiResponses({
+//            @ApiResponse(
+//                    responseCode = "200",
+//                    description = "HTTP Status OK"
+//            ),
+//            @ApiResponse(
+//                    responseCode = "500",
+//                    description = "HTTP Status Internal Server Error",
+//                    content = @Content(
+//                            schema = @Schema(implementation = ErrorResponseDto.class)
+//                    )
+//            )
+//    }
+//    )
+//    @GetMapping("/build-info")
+//    public ResponseEntity<String> getBuilderVersion() {
+//        return ResponseEntity.status(HttpStatus.OK).body(buildVersion);
+//        //return new ResponseEntity<>(buildVersion, HttpStatusCode.valueOf(200));
+//    }
+//    @Operation(
+//            summary = "Get Java Version",
+//            description = "Get Java Information that is installed  into accounts microservices"
+//    )
+//    @ApiResponses({
+//            @ApiResponse(
+//                    responseCode = "200",
+//                    description = "HTTP Status OK"
+//            ),
+//            @ApiResponse(
+//                    responseCode = "500",
+//                    description = "HTTP Status Internal Server Error",
+//                    content = @Content(
+//                            schema = @Schema(implementation = ErrorResponseDto.class)
+//                    )
+//            )
+//    }
+//    )
     @GetMapping("/java-version")
     public ResponseEntity<String> getJavaVersion() {
         return ResponseEntity.status(HttpStatus.OK)
