@@ -78,7 +78,7 @@ services:
     extends:
       file: common-config.yml
       service: microservice-configserver-config
-
+#
   cards:
     image: "boss215/cards:s7"
     container_name: cards-ms
@@ -87,6 +87,7 @@ services:
     environment:
       SPRING_APPLICATION_NAME: "cards"
       SPRING_DATASOURCE_URL: "jdbc:mysql://cardsdb:3306/cardsdb"
+
     depends_on:
       cardsdb:
         condition: service_healthy

@@ -6,9 +6,10 @@ services:
   microservice-db-config:
     extends:
       service: network-deploy-service
-    image: mysql
+    image: mysql:latest
     healthcheck:
       test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+#      test: [ "CMD-SHELL", "mysqladmin ping -h localhost -uroot -proot || exit 1" ]
       timeout: 10s
       retries: 10
       interval: 10s
