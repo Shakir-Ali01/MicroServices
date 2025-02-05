@@ -51,3 +51,9 @@ info:
     name: "accounts"
     description: "MS Bank Accounts Application"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      ms:
+        accounts: DEBUG

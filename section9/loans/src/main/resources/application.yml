@@ -53,3 +53,8 @@ info:
     name: "loans"
     description: "MS Bank Loans Application"
     version: "1.0.0"
+logging:
+  level:
+    com:
+      ms:
+        loans: DEBUG

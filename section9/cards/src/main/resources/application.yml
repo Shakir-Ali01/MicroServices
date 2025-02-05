@@ -55,3 +55,9 @@ info:
     name: "cards"
     description: "MS Bank Accounts Application"
     version: "1.0.0"
+
+logging:
+  level:
+    com:
+      ms:
+        cards: DEBUG

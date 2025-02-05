@@ -10,7 +10,7 @@ import java.util.List;
 @Component
 public class FilterUtility {
 
-    public static final String CORRELATION_ID = "eazybank-correlation-id";
+    public static final String CORRELATION_ID = "msbank-correlation-id";
 
     public String getCorrelationId(HttpHeaders requestHeaders) {
         if (requestHeaders.get(CORRELATION_ID) != null) {

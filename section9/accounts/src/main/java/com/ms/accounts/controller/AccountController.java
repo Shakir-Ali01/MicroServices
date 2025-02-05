@@ -34,6 +34,7 @@ public class AccountController {
      the dependencies into that constructor without requiring the @Autowired annotation*/
     private final IAccountsService iAccountsService;
 
+
     public AccountController(IAccountsService iAccountsService) {
         this.iAccountsService = iAccountsService;
     }
@@ -76,6 +77,7 @@ public class AccountController {
     public ResponseEntity<CustomerDto> fetchAccounts(@RequestParam
                                                          @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
                                                          String mobileNumber) {
+
        CustomerDto customerDto = iAccountsService.fetchAccounts(mobileNumber);
         return ResponseEntity
                 .status(HttpStatus.OK)
