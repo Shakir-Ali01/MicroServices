@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: "gatewayserver"
+  config:
+    import: "optional:configserver:http://localhost:8071/"
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: false
+          lowercaseServiceId: true
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    gateway:
+#      enabled: true
+       access: unrestricted
+  info:
+    env:
+      enabled: true
+
+info:
+  app:
+    name: "gatewayserver"
+    description: "Ms Bank Gateway Server Application"
+    version: "1.0.0"
+
+logging:
+  level:
+    com:
+      msbytes:
+        gatewayserver: DEBUG
+
+
+
+
+
+
+
+
+
